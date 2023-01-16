@@ -1,1 +1,13 @@
 本节展示如何通过对参数的设置，修改场景大小与布局方式
+
+场地示例1：
+#define WORKBENCH_WIDTH 2   //每个货架小组中，横向货架的个数
+#define WORKBENCH_LENGTH 5    //每个货架小组中，竖向货架的个数
+#define WORKBENCH_WIDTH_NUMBER 7 //横向货架小组的个数
+#define WORKBENCH_LENGTH_NUMBER 3  //纵向货架小组的个数
+
+场地示例2：
+#define WORKBENCH_WIDTH 4   //每个货架小组中，横向货架的个数
+#define WORKBENCH_LENGTH 4    //每个货架小组中，竖向货架的个数
+#define WORKBENCH_WIDTH_NUMBER 9 //横向货架小组的个数
+#define WORKBENCH_LENGTH_NUMBER 5  //纵向货架小组的个数
