@@ -1,8 +1,0 @@
-场地大小3*7： 参数设置
-#define WORKBENCH_WIDTH_NUMBER 7 //横向货架小组的个数
-#define WORKBENCH_LENGTH_NUMBER 3  //纵向货架小组的个数
-
-场地大小5*9：
-场地大小3*7： 参数设置
-#define WORKBENCH_WIDTH_NUMBER 7 //横向货架小组的个数
-#define WORKBENCH_LENGTH_NUMBER 3  //纵向货架小组的个数
