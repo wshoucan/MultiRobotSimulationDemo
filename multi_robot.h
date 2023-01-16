@@ -3,28 +3,27 @@
 
 #include <iostream>
 #include <windows.h>
-#include <stdlib.h>   //Éú³ÉËæ»úÊı 
+#include <stdlib.h>   //ç”Ÿæˆéšæœºæ•° 
 #include <time.h>    
 #include <math.h> 
 
-#include "Route_Plan.h"
+#include "route_Plan.h"
 #include "display.h"
 #include "workshop.h"
-#include "road_occupy_status.h"
 
 class Robot
 {
 private:
-	int ID;  //»úÆ÷ÈËµÄ±àºÅ
-	int p_row;    //»úÆ÷ÈËµ±Ç°Ëù´¦Î»ÖÃµÄĞĞ 
-	int p_col;    //»úÆ÷ÈËµ±Ç°Ëù´¦Î»ÖÃµÄÁĞ 
-	int status;   //»úÆ÷ÈËµÄµ±Ç°×´Ì¬ 
-	Task real_task;    //Êµ¼ÊµÄ°áÔËÈÎÎñ£¬Ã¿´Î»ñÈ¡ĞÂµÄ°áÔËÈÎÎñÊ±²Å¸³Öµ
-	Task task;     //»úÆ÷ÈËµ±Ç°ÔÚÖ´ĞĞµÄÈÎÎñ ,¿ÉÄÜÊÇµ÷¶È£¬Ò²¿ÉÄÜÊÇ°áÔË£¬Óëroute_record¶ÔÓ¦
-	RoutePlan route_plan;  //×¨ÃÅÓÃÀ´×öÂ·¾¶¹æ»®µÄÉú³É¶ÔÏó
-	RouteRecord route_record;   //»úÆ÷ÈËµ±Ç°µÄĞĞ½øÂ·Ïß 
-	int p_num;     //»úÆ÷ÈËµ±Ç°Ö´ĞĞµ½ÁË±¾ÈÎÎñµÄµÚ¼¸²½ 
-	int next_step_flag;  //»úÆ÷ÈËÏÂÒ»²½Ó¦¸ÃÔõÃ´ÒÆ¶¯µÄÖ¸Ê¾
+	int ID;  //æœºå™¨äººçš„ç¼–å·
+	int p_row;    //æœºå™¨äººå½“å‰æ‰€å¤„ä½ç½®çš„è¡Œ 
+	int p_col;    //æœºå™¨äººå½“å‰æ‰€å¤„ä½ç½®çš„åˆ— 
+	int status;   //æœºå™¨äººçš„å½“å‰çŠ¶æ€ 
+	Task real_task;    //å®é™…çš„æ¬è¿ä»»åŠ¡ï¼Œæ¯æ¬¡è·å–æ–°çš„æ¬è¿ä»»åŠ¡æ—¶æ‰èµ‹å€¼
+	Task task;     //æœºå™¨äººå½“å‰åœ¨æ‰§è¡Œçš„ä»»åŠ¡ ,å¯èƒ½æ˜¯è°ƒåº¦ï¼Œä¹Ÿå¯èƒ½æ˜¯æ¬è¿ï¼Œä¸route_recordå¯¹åº”
+	RoutePlan route_plan;  //ä¸“é—¨ç”¨æ¥åšè·¯å¾„è§„åˆ’çš„ç”Ÿæˆå¯¹è±¡
+	RouteRecord route_record;   //æœºå™¨äººå½“å‰çš„è¡Œè¿›è·¯çº¿ 
+	int p_num;     //æœºå™¨äººå½“å‰æ‰§è¡Œåˆ°äº†æœ¬ä»»åŠ¡çš„ç¬¬å‡ æ­¥ 
+	int next_step_flag;  //æœºå™¨äººä¸‹ä¸€æ­¥åº”è¯¥æ€ä¹ˆç§»åŠ¨çš„æŒ‡ç¤º
 
 public:
 	int get_next_step()
@@ -40,15 +39,15 @@ public:
 		return p_col;
 	}
 
-    Robot();  //¹¹Ôìº¯Êı
-	void InitRobot(int _ID); //¶Ô»úÆ÷ÈË³õÊ¼»¯ 
-	int FirstTaskToRobot(Task task,int task_num);  //ÏµÍ³³õÊ¼»¯ºó£¬¸øÃ¿¸ö»úÆ÷ÈË¸³ÓèÒ»¸ö³õÊ¼ÈÎÎñ
-    void TaskToRobot(Task);   //½«Ò»¸öÈÎÎñ¸³ÓèÒ»¸ö»úÆ÷ÈË 
-    void JudgeNextStep();   //ÅĞ¶ÏÏÂÒ»²½µÄÖÖÀà
-    void MoveSingleStep();    //½«±àºÅÎªIDµÄ»úÆ÷ÈË½øĞĞÒ»´Î²Ù×÷£¬ÈçºÎ²Ù×÷¸ù¾İnext_step¾ö¶¨ 
-    int RobotStatusTransform(Task task);    //JudgeNextStep()º¯Êı·µ»ØÖµÎª1Ê±£¬½øĞĞ×´Ì¬×ª»»
+    Robot();  //æ„é€ å‡½æ•°
+	void InitRobot(int _ID); //å¯¹æœºå™¨äººåˆå§‹åŒ– 
+	int FirstTaskToRobot(Task task,int task_num);  //ç³»ç»Ÿåˆå§‹åŒ–åï¼Œç»™æ¯ä¸ªæœºå™¨äººèµ‹äºˆä¸€ä¸ªåˆå§‹ä»»åŠ¡
+    void TaskToRobot(Task);   //å°†ä¸€ä¸ªä»»åŠ¡èµ‹äºˆä¸€ä¸ªæœºå™¨äºº 
+    void JudgeNextStep();   //åˆ¤æ–­ä¸‹ä¸€æ­¥çš„ç§ç±»
+    void MoveSingleStep();    //å°†ç¼–å·ä¸ºIDçš„æœºå™¨äººè¿›è¡Œä¸€æ¬¡æ“ä½œï¼Œå¦‚ä½•æ“ä½œæ ¹æ®next_stepå†³å®š 
+    int RobotStatusTransform(Task task);    //JudgeNextStep()å‡½æ•°è¿”å›å€¼ä¸º1æ—¶ï¼Œè¿›è¡ŒçŠ¶æ€è½¬æ¢
 };
 
-extern Robot* robot;   //Éú³É¶à¸ö·ÂÕæ»úÆ÷ÈË 
+extern Robot* robot;   //ç”Ÿæˆå¤šä¸ªä»¿çœŸæœºå™¨äºº 
 
 #endif
