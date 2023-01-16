@@ -1,4 +1,5 @@
-本节所录制的视频，添加了可选功能之一，即环路优化
+本节所录制的视频，添加了环路优化功能
+具体见paper《A Hybrid Coordination Method for Multi-robot in Restricted Movement Scene》
 红色节点代表逆行机器人
 黄色节点代表停车等待机器人
 绿色节点代表正常行进机器人
