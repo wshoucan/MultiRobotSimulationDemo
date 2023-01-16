@@ -18,14 +18,14 @@
 （7）multi_robot.cpp: 机器人的移动与状态转换  
 
 所以可调整参数均位于define.h文件中，此处对几个主要参数做简要说明，  
-#define WORKBENCH_WIDTH 2   //每个货架小组中，横向货架的个数
-#define WORKBENCH_LENGTH 5    //每个货架小组中，竖向货架的个数 
-#define WORKBENCH_WIDTH_NUMBER 9 //横向货架小组的个数
-#define WORKBENCH_LENGTH_NUMBER 3  //纵向货架小组的个数
+#define WORKBENCH_WIDTH 2   //每个货架小组中，横向货架的个数  
+#define WORKBENCH_LENGTH 5    //每个货架小组中，竖向货架的个数   
+#define WORKBENCH_WIDTH_NUMBER 9 //横向货架小组的个数  
+#define WORKBENCH_LENGTH_NUMBER 3  //纵向货架小组的个数  
 #define MAX_TASK_NUM 5000   //可执行的任务总数  
 #define ROBOT_NUM 10  //机器人的个数  
 
 说明：  
-（1）本项目仅提供基础路径规划算法与碰撞避免方法，其他功能需求可基于本项目自行实现
+（1）本项目仅提供基础路径规划算法与碰撞避免方法，其他功能需求可基于本项目自行实现  
 （2）本仿真场景采用栅格化的建模方式，不涉及机器人速度、加速度等信息  
-（3）本仿真场景施加单行进方向约束，以尽可能避免死锁发生
+（3）本仿真场景施加单行进方向约束，以尽可能避免死锁发生  
